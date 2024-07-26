@@ -10,7 +10,7 @@ RUN if [ "$APP_IMAGE" = "nvidia/cuda:12.0.0-devel-ubuntu22.04" ]; then \
     mkdir /root/.conda && \
     bash Miniconda3-latest-Linux-x86_64.sh -b && \
     rm -f Miniconda3-latest-Linux-x86_64.sh && \
-    apt-get install -y libxkbcommon-x11-0; \
+    apt-get install -y libxkbcommon-x11-0 libsm6; \
 else \
     echo "Using Conda image" && \
     apt-get update -yq && \
