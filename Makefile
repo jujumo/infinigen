@@ -56,6 +56,7 @@ docker-run:
 		--env NVIDIA_DISABLE_REQUIRE=1 \
 		-e "DISPLAY=$(DISPLAY)" \
 		-e "QT_X11_NO_MITSHM=1" \
+		-v "$(XAUTH):$(XAUTH):rw" \
 		-v "/tmp/.X11-unix:/tmp/.X11-unix:rw" \
 		-v $(PWD)/outputs:/opt/infinigen/outputs \
 		-e "XAUTHORITY=$(XAUTH)" \
@@ -68,6 +69,7 @@ docker-run:
 		--device /dev/dri \
 		-e "DISPLAY=$(DISPLAY)" \
 		-e "QT_X11_NO_MITSHM=1" \
+		-v "$(XAUTH):$(XAUTH):rw" \
 		-v "/tmp/.X11-unix:/tmp/.X11-unix:rw" \
 		-v $(PWD)/outputs:/opt/infinigen/outputs \
 		-e "XAUTHORITY=$(XAUTH)" \
